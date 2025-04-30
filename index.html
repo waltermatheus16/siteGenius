@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genius Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-yH7I7B1zAJ6M4A4XR3U3JYkMPZAHMd6i3ljW2EPDLk9tRO8Ud+J3GyT3dZsEycFq7eRtR4g+v+zOeqy1kWbV0A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600&display=swap" rel="stylesheet"> <!-- Font weight 600 -->
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0A0A0A;
+      color: white;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: #0e0e0e;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6); /* sombra opcional para destacar */
+}
+
+main {
+  margin-top: 100px; /* ou o valor que representa a altura do seu header */
+}
+
+    .logo {
+  font-family: 'Just Another Hand', cursive;
+  font-size: 2rem;
+  color: white;
+  transition: all 0.3s ease; /* Transição suave */
+}
+
+.logo:hover {
+  transform: scale(1.1); /* Aumenta ligeiramente o tamanho */
+  color: #00ffff; /* Muda a cor (exemplo: ciano) */
+  text-shadow: 0 0 10px #00ffff; /* Adiciona brilho ao texto */
+}
+
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .icons i {
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; /* Centraliza o conteúdo */
+      text-align: center; /* Centraliza o texto */
+      padding: 2rem;
+    }
+
+    h1, .trabajos-title {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      margin-left: 300px;
+      text-align: left;
+      width: 100%;
+      font-family: 'Source Code Pro', monospace; /* Agora com a fonte Source Code Pro */
+      font-weight: 600; /* Definindo o peso como negrito */
+    }
+
+    p {
+      max-width: 600px;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+      font-weight: bold;
+    }
+
+    .btn {
+      background-color: white;
+      color: black;
+      padding: 0.5rem 1.5rem;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .trabajo-box {
+  width: 778px;
+  height: 250px;
+  padding: 2rem;
+  background-color: #0e0e0e;
+  border: 2px solid white;
+  color: white;
+  text-align: left;
+  font-weight: normal;
+  margin-top: 1rem;
+  border-radius: 15px;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+.trabajo-box h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.trabajo-box p {
+  font-size: 1.0rem;
+  margin-bottom: 1rem;
+  color: #ccc;
+  line-height: 120px; /* ⬅️ Aqui você ajusta a altura do texto */
+
+}
+
+.icono-trabajo {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 35px;
+  height: 35px;
+}
+
+.tags {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.tags span {
+  color: #666;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.btn-ver {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: white;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  padding: 0.6rem 1.5rem; /* Aumentado */
+  font-size: 1rem; /* Adicionado para aumentar o texto */
+  cursor: pointer;
+}
+
+
+.servicios-section {
+      padding: 4rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .servicios-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+
+    .carousel {
+  position: relative;
+  width: 780px; /* Largura fixa de 780px */
+  height: 540px; /* Altura fixa de 540px */
+  background-color: transparent; /* Fundo transparente */
+  border: 1px solid white;
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+    .slide {
+      display: none;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .slide h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .slide p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-align: center; /* Centraliza o texto horizontalmente */
+  margin: 0 auto; /* Garante que o parágrafo fique centralizado dentro do contêiner */
+  width: 100%; /* Garante que o parágrafo ocupe toda a largura disponível */
+}
+
+
+.btn-ver-mas {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  padding: 0.6rem 1.4rem;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  position: absolute; /* Permite o posicionamento absoluto */
+  right: 40px; /* Distância da borda direita */
+  bottom: 35px; /* Distância da borda inferior */
+  transition: all 0.3s ease; /* Suaviza a transição de todos os efeitos */
+}
+
+.btn-ver-mas:hover {
+  background-color: #f1f1f1; /* Altera a cor de fundo ao passar o mouse */
+  color: #333; /* Muda a cor do texto ao passar o mouse */
+  transform: scale(1.1); /* Aumenta o tamanho do botão */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao botão */
+}
+
+.btn-ver-mas:active {
+  transform: scale(1.05); /* Leve diminuição do tamanho quando o botão é pressionado */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra mais suave ao pressionar */
+}
+
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: white;
+      color: black;
+      border: none;
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .nav-btn.left {
+      left: -2.5rem;
+    }
+
+    .nav-btn.right {
+      right: -2.5rem;
+    }
+
+    .dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 4rem;
+    }
+
+    .dot {
+      height: 10px;
+      width: 10px;
+      background-color: #888;
+      border-radius: 50%;
+      margin: 0 5px;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background-color: white;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Genius Studio</div>
+    <nav>
+      <a href="#" class="active">Nosotros</a>
+      <a href="#">Servicios</a>
+      <a href="#">Contactos</a>
+    </nav>
+   
+  </header>
+
+  <main>
+    <div class="trabajos-title" id="proposito">Nuestro propósito</div>
+    <br>
+<br>
+
+<p id="texto-proposito">
+    En Genius Studio, trabajamos para crear soluciones digitales que reflejen la identidad y las necesidades de cada cliente.
+      Desde el principio, nos hemos comprometido a entregar resultados de alta calidad, respetando los plazos establecidos y
+      garantizando valores justos y transparentes.
+      En Genius Studio, trabajamos para crear soluciones digitales que reflejen la identidad y las necesidades de cada cliente.
+      Desde el principio, nos hemos comprometido a entregar resultados de alta calidad, respetando los plazos establecidos y
+      garantizando valores justos y transparentes.
+      
+    </p>
+    <button class="btn">Ver más</button>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+    <div class="trabajos-title">Trabajos</div>
+
+    <div class="trabajo-box">
+        <img src="java-icon.png" alt="Java" class="icono-trabajo" />
+        <h2>Total Electro Ecommerce</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+        <div class="tags">
+          <span>Java</span>
+          <span>Spring Boot</span>
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JS</span>
+        </div>
+        <button class="btn-ver">Ver</button>
+      </div>
+
+<br>
+<br>
+<br>
+      <div class="trabajo-box">
+          <img src="java-icon.png" alt="Java" class="icono-trabajo" />
+          <h2>Total Electro Ecommerce</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+          <div class="tags">
+            <span>Java</span>
+            <span>Spring Boot</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JS</span>
+          </div>
+          <button class="btn-ver">Ver</button>
+        </div>
+
+        <section class="servicios-section">
+            <h2 class="servicios-title">Servicios</h2>
+        
+            <div class="carousel">
+              <div class="slide active">
+                <h2>E-Commerce</h2>
+                <br>
+                <br>
+                <p>
+                  Hoy en día, tener un local físico no es suficiente. Un sitio web te permite vender las 24 horas, llegar a más personas,
+                  mostrar tus productos de forma profesional y aumentar tu credibilidad. Además, controlas tus ventas sin depender de plataformas
+                  de terceros, puedes hacer promociones exclusivas y construir una relación directa con tus clientes, además de posicionar tu marca a nivel mundial.
+                </p>
+                <button class="btn-ver-mas">Ver más</button>
+              </div>
+        
+              <div class="slide">
+                <h2>Institucional</h2>
+                <br>
+                <br>
+                <p>
+                    Tener un sitio web propio permite que tu empresa esté visible las 24 horas, alcance más personas y transmita profesionalismo 
+                    y confianza. Además, te da control total sobre tus ventas y promociones, sin depender de plataformas externas. Es la clave para fortalecer tu imagen y conectar directamente con tus clientes.
+                </p>
+                <button class="btn-ver-mas">Ver más</button>
+              </div>
+        
+              <!-- Navegação -->
+              <button class="nav-btn left">&#8592;</button>
+              <button class="nav-btn right">&#8594;</button>
+        
+              <!-- Indicadores -->
+              <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+              </div>
+            </div>
+          </section>
+      
+  </main>
+
+  <script>
+    window.addEventListener('scroll', function () {
+      const texto = document.getElementById('texto-proposito');
+      const scrollMax = 500;
+      const scrollTop = window.scrollY;
+  
+      const ratio = Math.min(scrollTop / scrollMax, 1); 
+      const grayValue = Math.floor(255 - (255 * ratio)); 
+  
+      // Aplica a cor como tons de cinza (escuro → claro)
+      texto.style.color = `rgb(${grayValue}, ${grayValue}, ${grayValue})`;
+    });
+
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+        dots[i].classList.toggle('active', i === index);
+      });
+      current = index;
+    }
+
+    document.querySelector('.nav-btn.left').addEventListener('click', () => {
+      const newIndex = (current - 1 + slides.length) % slides.length;
+      showSlide(newIndex);
+    });
+
+    document.querySelector('.nav-btn.right').addEventListener('click', () => {
+      const newIndex = (current + 1) % slides.length;
+      showSlide(newIndex);
+    });
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => showSlide(i));
+    });
+
+  </script>
+  
+  
+
+</body>
+</html>
