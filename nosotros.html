@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genius Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-yH7I7B1zAJ6M4A4XR3U3JYkMPZAHMd6i3ljW2EPDLk9tRO8Ud+J3GyT3dZsEycFq7eRtR4g+v+zOeqy1kWbV0A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600&display=swap" rel="stylesheet"> <!-- Font weight 600 -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-RCnbP6FZn5OIbvTZwB5PuHkMEuIhC+6aMeF9jJWMaI/8sc3FJNZJ1aFxVXGQKRqY0mZbb9OxC1+8FFsLx4mTOw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0A0A0A;
+      color: white;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: #0e0e0e;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6); /* sombra opcional para destacar */
+}
+
+main {
+  margin-top: 100px; /* ou o valor que representa a altura do seu header */
+}
+
+    .logo {
+  font-family: 'Just Another Hand', cursive;
+  font-size: 2rem;
+  color: white;
+  transition: all 0.3s ease; /* Transição suave */
+}
+
+.logo:hover {
+  transform: scale(1.1); /* Aumenta ligeiramente o tamanho */
+  color: #00ffff; /* Muda a cor (exemplo: ciano) */
+  text-shadow: 0 0 10px #00ffff; /* Adiciona brilho ao texto */
+}
+
+nav {
+  flex-grow: 1; /* Faz o menu crescer e ocupar o espaço disponível */
+  display: flex;
+  justify-content: center; /* Centraliza os itens dentro do nav */
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .icons i {
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; /* Centraliza o conteúdo */
+      text-align: center; /* Centraliza o texto */
+      padding: 2rem;
+    }
+
+    .social-icons {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.social-icons a {
+  margin-left: 1rem;
+  border: none !important; /* Impede qualquer linha/borda */
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1); /* Deixa os ícones brancos */
+  transition: opacity 0.3s ease;
+}
+
+.social-icons img:hover {
+  opacity: 0.7;
+}
+
+a {
+  text-decoration: none; /* Remove o sublinhado de todos os links */
+}
+
+</style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">Genius Studio</a>
+    <nav>
+      <a href="#" class="active">Nosotros</a>
+      <a href="#">Servicios</a>
+      <a href="#">Contactos</a>
+    </nav>
+   
+    <div class="social-icons">
+        <a href="https://wa.me/5511999999999" target="_blank" title="WhatsApp">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
+        </a>
+        <a href="https://instagram.com/SEU_USUARIO" target="_blank" title="Instagram">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+        </a>
+      </div>
+  </header>

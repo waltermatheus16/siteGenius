@@ -106,11 +106,16 @@ nav a {
       font-weight: 600; /* Definindo o peso como negrito */
     }
 
+    a {
+  text-decoration: none; /* Remove o sublinhado de todos os links */
+}
     p {
       max-width: 600px;
-      line-height: 1.5;
+      line-height: 1.2;
       margin-bottom: 2rem;
       font-weight: bold;
+      font-size: 1.3rem;
+
     }
 
     .btn {
@@ -136,7 +141,10 @@ nav a {
   border-radius: 15px;
   position: relative;
   font-family: 'Poppins', sans-serif;
+  overflow: hidden; /* Impede que o conteúdo saia do limite do box */
+  transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
 }
+
 
 .trabajo-box h2 {
   font-size: 1.3rem;
@@ -336,9 +344,9 @@ nav a {
 <body>
 
   <header>
-    <div class="logo">Genius Studio</div>
+    <a href="index.html" class="logo">Genius Studio</a>
     <nav>
-      <a href="#" class="active">Nosotros</a>
+      <a href="nosotros.html" class="active">Nosotros</a>
       <a href="#">Servicios</a>
       <a href="#">Contactos</a>
     </nav>
@@ -366,8 +374,11 @@ nav a {
       Desde el principio, nos hemos comprometido a entregar resultados de alta calidad, respetando los plazos establecidos y
       garantizando valores justos y transparentes.
       
-    </p>
-    <button class="btn">Ver más</button>
+      <p id="texto-extra" style="display: none;">
+        Detrás de Genius Studio Web Design está un equipo joven, dinámico y altamente capacitado, que combina habilidades 
+        técnicas con visión estratégica. Creemos que la proximidad, la comunicación constante y la atención al detalle son los pilares para construir relaciones sólidas y proyectos exitosos.
+      </p>
+    <button class="btn" id="verMasBtn">Ver más</button>
 <br>
 <br>
 <br>
@@ -453,17 +464,21 @@ nav a {
   </main>
 
   <script>
-    window.addEventListener('scroll', function () {
-      const texto = document.getElementById('texto-proposito');
-      const scrollMax = 500;
-      const scrollTop = window.scrollY;
-  
-      const ratio = Math.min(scrollTop / scrollMax, 1); 
-      const grayValue = Math.floor(255 - (255 * ratio)); 
-  
-      // Aplica a cor como tons de cinza (escuro → claro)
-      texto.style.color = `rgb(${grayValue}, ${grayValue}, ${grayValue})`;
-    });
+   window.addEventListener('scroll', function () {
+  const texto = document.getElementById('texto-proposito');
+  const textoExtra = document.getElementById('texto-extra'); // Adiciona o segundo texto
+  const scrollMax = 500;
+  const scrollTop = window.scrollY;
+
+  const ratio = Math.min(scrollTop / scrollMax, 1); 
+  const grayValue = Math.floor(255 - (255 * ratio)); 
+
+  // Aplica a cor como tons de cinza (escuro → claro) ao primeiro texto
+  texto.style.color = `rgb(${grayValue}, ${grayValue}, ${grayValue})`;
+
+  // Aplica a cor como tons de cinza (escuro → claro) ao segundo texto
+  textoExtra.style.color = `rgb(${grayValue}, ${grayValue}, ${grayValue})`;
+});
 
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
@@ -490,6 +505,21 @@ nav a {
     dots.forEach((dot, i) => {
       dot.addEventListener('click', () => showSlide(i));
     });
+
+
+    document.getElementById('verMasBtn').addEventListener('click', function() {
+  var textoExtra = document.getElementById('texto-extra');
+  
+  // Verifica se o texto extra está visível ou oculto
+  if (textoExtra.style.display === 'none') {
+    textoExtra.style.display = 'block'; // Exibe o texto extra
+    this.innerText = 'Ver menos'; // Muda o texto do botão
+  } else {
+    textoExtra.style.display = 'none'; // Oculta o texto extra
+    this.innerText = 'Ver más'; // Restaura o texto do botão
+  }
+});
+
 
   </script>
   
