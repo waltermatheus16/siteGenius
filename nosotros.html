@@ -1,403 +1,427 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Genius Studio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-yH7I7B1zAJ6M4A4XR3U3JYkMPZAHMd6i3ljW2EPDLk9tRO8Ud+J3GyT3dZsEycFq7eRtR4g+v+zOeqy1kWbV0A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600&display=swap" rel="stylesheet"> <!-- Font weight 600 -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-RCnbP6FZn5OIbvTZwB5PuHkMEuIhC+6aMeF9jJWMaI/8sc3FJNZJ1aFxVXGQKRqY0mZbb9OxC1+8FFsLx4mTOw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Genius Studio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-yH7I7B1zAJ6M4A4XR3U3JYkMPZAHMd6i3ljW2EPDLk9tRO8Ud+J3GyT3dZsEycFq7eRtR4g+v+zOeqy1kWbV0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font weight 600 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-RCnbP6FZn5OIbvTZwB5PuHkMEuIhC+6aMeF9jJWMaI/8sc3FJNZJ1aFxVXGQKRqY0mZbb9OxC1+8FFsLx4mTOw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/nosotros.css" />
 
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-<style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+      body {
+        background-color: #0a0a0a;
+        color: white;
+        font-family: "Courier New", monospace;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
 
-    body {
-      background-color: #0A0A0A;
-      color: white;
-      font-family: 'Courier New', monospace;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 2rem;
+        background-color: #0e0e0e;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); /* sombra opcional para destacar */
+      }
 
-    header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 2rem;
-  background-color: #0e0e0e;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.6); /* sombra opcional para destacar */
-}
+      main {
+        margin-top: 100px; /* ou o valor que representa a altura do seu header */
+      }
 
-main {
-  margin-top: 100px; /* ou o valor que representa a altura do seu header */
-}
+      .logo {
+        font-family: "Just Another Hand", cursive;
+        font-size: 2rem;
+        color: white;
+        transition: all 0.3s ease; /* Transição suave */
+      }
 
-    .logo {
-  font-family: 'Just Another Hand', cursive;
-  font-size: 2rem;
-  color: white;
-  transition: all 0.3s ease; /* Transição suave */
-}
+      .logo:hover {
+        transform: scale(1.1); /* Aumenta ligeiramente o tamanho */
+        color: #00ffff; /* Muda a cor (exemplo: ciano) */
+        text-shadow: 0 0 10px #00ffff; /* Adiciona brilho ao texto */
+      }
 
-.logo:hover {
-  transform: scale(1.1); /* Aumenta ligeiramente o tamanho */
-  color: #00ffff; /* Muda a cor (exemplo: ciano) */
-  text-shadow: 0 0 10px #00ffff; /* Adiciona brilho ao texto */
-}
+      nav {
+        flex-grow: 1; /* Faz o menu crescer e ocupar o espaço disponível */
+        display: flex;
+        justify-content: center; /* Centraliza os itens dentro do nav */
+      }
 
-nav {
-  flex-grow: 1; /* Faz o menu crescer e ocupar o espaço disponível */
-  display: flex;
-  justify-content: center; /* Centraliza os itens dentro do nav */
-}
+      nav a {
+        margin: 0 1rem;
+        text-decoration: none;
+        color: white;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+      }
 
-nav a {
-  margin: 0 1rem;
-  text-decoration: none;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-}
+      nav a:hover {
+        text-decoration: underline;
+      }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+      .icons {
+        display: flex;
+        gap: 1rem;
+      }
 
-    .icons {
-      display: flex;
-      gap: 1rem;
-    }
+      .icons i {
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
 
-    .icons i {
-      color: white;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
+      main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; /* Centraliza o conteúdo */
+        text-align: center; /* Centraliza o texto */
+        padding: 2rem;
+      }
 
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center; /* Centraliza o conteúdo */
-      text-align: center; /* Centraliza o texto */
-      padding: 2rem;
-    }
+      .social-icons {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+      }
 
-    .social-icons {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-}
+      .social-icons a {
+        margin-left: 1rem;
+        border: none !important; /* Impede qualquer linha/borda */
+      }
 
-.social-icons a {
-  margin-left: 1rem;
-  border: none !important; /* Impede qualquer linha/borda */
-}
+      .social-icons img {
+        width: 24px;
+        height: 24px;
+        filter: brightness(0) invert(1); /* Deixa os ícones brancos */
+        transition: opacity 0.3s ease;
+      }
 
-.social-icons img {
-  width: 24px;
-  height: 24px;
-  filter: brightness(0) invert(1); /* Deixa os ícones brancos */
-  transition: opacity 0.3s ease;
-}
+      .social-icons img:hover {
+        opacity: 0.7;
+      }
 
-.social-icons img:hover {
-  opacity: 0.7;
-}
+      a {
+        text-decoration: none; /* Remove o sublinhado de todos os links */
+      }
 
-a {
-  text-decoration: none; /* Remove o sublinhado de todos os links */
-}
+      .section-title {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-top: 10rem;
+        margin-left: 4rem;
+        margin-bottom: 1rem;
+        position: relative;
+        display: inline-block;
 
+        /* Animação */
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: opacity 1s ease, transform 1s ease;
+      }
 
-.section-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-top: 10rem;
-  margin-left: 4rem;
-  margin-bottom: 1rem;
-  position: relative;
-  display: inline-block;
+      .section-title.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
 
-  /* Animação */
-  opacity: 0;
-  transform: translateX(-100px);
-  transition: opacity 1s ease, transform 1s ease;
-}
+      .section-title::after {
+        content: "";
+        position: absolute;
+        left: -50px;
+        bottom: -10px;
+        height: 3px;
+        width: 338%;
+        background-color: white;
+      }
 
-.section-title.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
+      .section-title::before {
+        content: "";
+        position: absolute;
+        right: -675px;
+        bottom: -15px;
+        width: 10px;
+        height: 10px;
+        background: white;
+        border-radius: 50%;
+      }
 
-.section-title::after {
-  content: '';
-  position: absolute;
-  left: -50px;
-  bottom: -10px;
-  height: 3px;
-  width: 338%;
-  background-color: white;
-}
+      .content {
+        max-width: 700px;
+        margin-top: 2rem;
+        margin-left: 6rem;
+        line-height: 1.6;
+        font-size: 1rem;
+        font-family: "Source Code Pro", monospace;
 
-.section-title::before {
-  content: '';
-  position: absolute;
-  right: -675px;
-  bottom: -15px;
-  width: 10px;
-  height: 10px;
-  background: white;
-  border-radius: 50%;
-}
+        /* Animação */
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: opacity 1s ease, transform 1s ease;
+      }
 
-.content {
-  max-width: 700px;
-  margin-top: 2rem;
-  margin-left: 6rem;
-  line-height: 1.6;
-  font-size: 1rem;
-  font-family: 'Source Code Pro', monospace;
+      .content.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
 
-  /* Animação */
-  opacity: 0;
-  transform: translateX(-100px);
-  transition: opacity 1s ease, transform 1s ease;
-}
+      /* Estilos para o título da seção "Misión" */
+      .next-section {
+        font-family: "Space Grotesk", sans-serif; /* Fonte para os títulos */
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-top: 6rem;
+        margin-right: 4rem;
+        margin-bottom: 1rem;
+        position: relative;
+        display: inline-block;
+        float: right; /* Alinha à direita */
+        text-align: right;
+        opacity: 0; /* Começa invisível */
+        transform: translateX(100%); /* Começa fora da tela, à direita */
+        transition: transform 1s ease, opacity 1s ease; /* Transição suave */
+      }
 
-.content.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
+      /* Quando a classe 'visible' for adicionada ao título */
+      .next-section.visible {
+        opacity: 1;
+        transform: translateX(
+          0
+        ); /* O título se move para sua posição original */
+      }
 
- /* Estilos para o título da seção "Misión" */
-.next-section {
-  font-family: 'Space Grotesk', sans-serif; /* Fonte para os títulos */
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-top: 6rem;
-  margin-right: 4rem;
-  margin-bottom: 1rem;
-  position: relative;
-  display: inline-block;
-  float: right; /* Alinha à direita */
-  text-align: right;
-  opacity: 0; /* Começa invisível */
-  transform: translateX(100%); /* Começa fora da tela, à direita */
-  transition: transform 1s ease, opacity 1s ease; /* Transição suave */
-}
+      .next-section::after {
+        content: "";
+        position: absolute;
+        right: -63px; /* Move a linha para a direita */
+        bottom: -10px;
+        height: 3px;
+        width: 843%;
+        background-color: white;
+      }
 
-/* Quando a classe 'visible' for adicionada ao título */
-.next-section.visible {
-  opacity: 1;
-  transform: translateX(0); /* O título se move para sua posição original */
-}
+      .next-section::before {
+        content: "";
+        position: absolute;
+        left: -883px; /* Move a bolinha para a esquerda da linha (já que estamos à direita) */
+        bottom: -15px;
+        width: 10px;
+        height: 10px;
+        background: white;
+        border-radius: 50%;
+      }
 
-.next-section::after {
-  content: '';
-  position: absolute;
-  right: -63px; /* Move a linha para a direita */
-  bottom: -10px;
-  height: 3px;
-  width: 843%;
-  background-color: white;
-}
+      .next-section span {
+        color: white;
+      }
 
-.next-section::before {
-  content: '';
-  position: absolute;
-  left: -883px; /* Move a bolinha para a esquerda da linha (já que estamos à direita) */
-  bottom: -15px;
-  width: 10px;
-  height: 10px;
-  background: white;
-  border-radius: 50%;
-}
+      /* Estilos para o conteúdo da seção "Misión" */
+      .direita-content {
+        max-width: 700px;
+        margin-top: 12rem;
+        margin-left: 60rem; /* Ajusta para estar mais à direita */
+        line-height: 1.6;
+        font-size: 1rem; /* Tamanho de fonte 28 */
+        font-family: "Source Code Pro", monospace; /* Fonte atualizada */
+        opacity: 0; /* Começa invisível */
+        transform: translateX(100%); /* Começa fora da tela, à direita */
+        transition: transform 1s ease, opacity 1s ease; /* Transição suave */
+      }
 
-.next-section span {
-  color: white;
-}
+      /* Quando a classe 'visible' for adicionada ao conteúdo */
+      .direita-content.visible {
+        opacity: 1;
+        transform: translateX(
+          0
+        ); /* O conteúdo se move para sua posição original */
+      }
 
-/* Estilos para o conteúdo da seção "Misión" */
-.direita-content {
-  max-width: 700px;
-  margin-top: 12rem;
-  margin-left: 60rem; /* Ajusta para estar mais à direita */
-  line-height: 1.6;
-  font-size: 1rem; /* Tamanho de fonte 28 */
-  font-family: 'Source Code Pro', monospace; /* Fonte atualizada */
-  opacity: 0; /* Começa invisível */
-  transform: translateX(100%); /* Começa fora da tela, à direita */
-  transition: transform 1s ease, opacity 1s ease; /* Transição suave */
-}
+      .vision .section-title {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-top: 10rem;
+        margin-left: 4rem;
+        margin-bottom: 1rem;
+        position: relative;
+        display: inline-block;
 
-/* Quando a classe 'visible' for adicionada ao conteúdo */
-.direita-content.visible {
-  opacity: 1;
-  transform: translateX(0); /* O conteúdo se move para sua posição original */
-}
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: opacity 1s ease, transform 1s ease;
+      }
 
+      .vision .section-title.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
 
-.vision .section-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-top: 10rem;
-  margin-left: 4rem;
-  margin-bottom: 1rem;
-  position: relative;
-  display: inline-block;
+      .vision .content {
+        font-family: "Source Code Pro", monospace;
+        font-size: 1rem;
+        max-width: 700px;
+        margin-top: 2rem;
+        margin-left: 6rem;
+        line-height: 1.6;
 
-  opacity: 0;
-  transform: translateX(-100px);
-  transition: opacity 1s ease, transform 1s ease;
-}
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: opacity 1s ease, transform 1s ease;
+      }
 
-.vision .section-title.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
+      .vision .content.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
 
-.vision .content {
-  font-family: 'Source Code Pro', monospace;
-  font-size: 1rem;
-  max-width: 700px;
-  margin-top: 2rem;
-  margin-left: 6rem;
-  line-height: 1.6;
+      /* Linha e bolinha da seção Visión */
+      .vision .section-title::after {
+        width: 878%;
+        left: -75px;
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        height: 3px;
+        background-color: white;
+      }
 
-  opacity: 0;
-  transform: translateX(-100px);
-  transition: opacity 1s ease, transform 1s ease;
-}
+      .vision .section-title::before {
+        content: "";
+        position: absolute;
+        right: -860px;
+        bottom: -15px;
+        width: 10px;
+        height: 10px;
+        background: white;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo">Genius Studio</a>
+      <nav>
+        <a href="#" class="active">Nosotros</a>
+        <a href="#">Servicios</a>
+        <a href="#">Contactos</a>
+      </nav>
 
-.vision .content.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Linha e bolinha da seção Visión */
-.vision .section-title::after {
-  width: 878%;
-  left: -75px;
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  height: 3px;
-  background-color: white;
-}
-
-.vision .section-title::before {
-  content: '';
-  position: absolute;
-  right: -860px;
-  bottom: -15px;
-  width: 10px;
-  height: 10px;
-  background: white;
-  border-radius: 50%;
-}
-
-
-
-
-</style>
-</head>
-<body>
-
-  <header>
-    <a href="index.html" class="logo">Genius Studio</a>
-    <nav>
-      <a href="#" class="active">Nosotros</a>
-      <a href="#">Servicios</a>
-      <a href="#">Contactos</a>
-    </nav>
-   
-    <div class="social-icons">
+      <div class="social-icons">
         <a href="https://wa.me/5511999999999" target="_blank" title="WhatsApp">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
+          <img
+            src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
+            alt="WhatsApp"
+          />
         </a>
-        <a href="https://instagram.com/SEU_USUARIO" target="_blank" title="Instagram">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+        <a
+          href="https://instagram.com/SEU_USUARIO"
+          target="_blank"
+          title="Instagram"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+            alt="Instagram"
+          />
         </a>
       </div>
-  </header>
+    </header>
 
-
-  <section>
-    <h1 class="section-title">Quiénes Somos</h1>
-    <div class="content">
-      <p>
-     
-Genius Studio Web Design nació de la pasión de dos estudiantes recién graduados en Análisis y Desarrollo de Sistemas, unidos por un objetivo en común: ofrecer soluciones digitales de alta calidad a precios justos. Con la combinación de conocimientos técnicos actualizados y una fuerte motivación emprendedora, decidimos fundar este estudio para acercar la tecnología a empresas y proyectos que buscan crescer de forma inteligente y acessible.
-Creemos que el diseño web no es solo una questão estética, sino uma ferramenta estratégica para conectar marcas e personas, impulsando negócios hacia nuevas oportunidades.
-      </p>
-    </div>
-  
-    <div class="next-section">
-      <div></div>
-      <span>Misión</span>
-    </div>
-    
-    <div class="direita-content">
-      <p>
-        En Genius Studio Web Design, trabajamos para crear soluciones digitales que reflejen la identidad y las necesidades de cada cliente. Desde el principio, nos hemos comprometido a entregar resultados de alta calidad, respetando los plazos establecidos y garantizando valores justos y transparentes.
-        Nuestro enfoque combina el compromiso absoluto con quienes confían en nosotros, el respeto riguroso por los tiempos de entrega y una gestión basada en la calidad y la transparencia en cada etapa del proceso. Creemos que el éxito de un proyecto no depende únicamente del diseño, sino de la relación de confianza y profesionalismo que construimos junto a nuestros clientes.
-        Transformamos ideas en realidades digitales que impulsan marcas hacia el crecimiento y la innovación, aportando soluciones que conectan personas, empresas y oportunidades.     
-      </p>
-    
-    </div>
-  
-    <section class="vision">
-      <h1 class="section-title">Visión</h1>
+    <section>
+      <h1 class="section-title">Quiénes Somos</h1>
       <div class="content">
         <p>
-            Ser reconocidos como un estudio de referencia en el mercado de diseño y desarrollo web, ofreciendo soluciones accesibles, modernas y de alta calidad. Aspiramos a acompañar la evolución digital de micro, pequeñas y medianas empresas, ayudándolas a fortalecer su presencia online, a mejorar su competitividad y a alcanzar nuevos mercados.
-            Buscamos ser un socio estratégico de nuestros clientes, no solo entregando sitios web, sino construyendo plataformas que generen valor real, credibilidad y crecimiento sostenible. Nuestra visión es crecer junto a ellos, impulsando la innovación constante, adaptándonos a las nuevas tendencias tecnológicas y manteniendo siempre el compromiso con la excelencia, la transparencia y el respeto por cada proyecto que confiado en nosotros.        </p>
-       
+          Genius Studio Web Design nació de la pasión de dos estudiantes recién
+          graduados en Análisis y Desarrollo de Sistemas, unidos por un objetivo
+          en común: ofrecer soluciones digitales de alta calidad a precios
+          justos. Con la combinación de conocimientos técnicos actualizados y
+          una fuerte motivación emprendedora, decidimos fundar este estudio para
+          acercar la tecnología a empresas y proyectos que buscan crescer de
+          forma inteligente y acessible. Creemos que el diseño web no es solo
+          una questão estética, sino uma ferramenta estratégica para conectar
+          marcas e personas, impulsando negócios hacia nuevas oportunidades.
+        </p>
       </div>
+
+      <div class="next-section">
+        <div></div>
+        <span>Misión</span>
+      </div>
+
+      <div class="direita-content">
+        <p>
+          En Genius Studio Web Design, trabajamos para crear soluciones
+          digitales que reflejen la identidad y las necesidades de cada cliente.
+          Desde el principio, nos hemos comprometido a entregar resultados de
+          alta calidad, respetando los plazos establecidos y garantizando
+          valores justos y transparentes. Nuestro enfoque combina el compromiso
+          absoluto con quienes confían en nosotros, el respeto riguroso por los
+          tiempos de entrega y una gestión basada en la calidad y la
+          transparencia en cada etapa del proceso. Creemos que el éxito de un
+          proyecto no depende únicamente del diseño, sino de la relación de
+          confianza y profesionalismo que construimos junto a nuestros clientes.
+          Transformamos ideas en realidades digitales que impulsan marcas hacia
+          el crecimiento y la innovación, aportando soluciones que conectan
+          personas, empresas y oportunidades.
+        </p>
+      </div>
+
+      <section class="vision">
+        <h1 class="section-title">Visión</h1>
+        <div class="content">
+          <p>
+            Ser reconocidos como un estudio de referencia en el mercado de
+            diseño y desarrollo web, ofreciendo soluciones accesibles, modernas
+            y de alta calidad. Aspiramos a acompañar la evolución digital de
+            micro, pequeñas y medianas empresas, ayudándolas a fortalecer su
+            presencia online, a mejorar su competitividad y a alcanzar nuevos
+            mercados. Buscamos ser un socio estratégico de nuestros clientes, no
+            solo entregando sitios web, sino construyendo plataformas que
+            generen valor real, credibilidad y crecimiento sostenible. Nuestra
+            visión es crecer junto a ellos, impulsando la innovación constante,
+            adaptándonos a las nuevas tendencias tecnológicas y manteniendo
+            siempre el compromiso con la excelencia, la transparencia y el
+            respeto por cada proyecto que confiado en nosotros.
+          </p>
+        </div>
+      </section>
     </section>
-  </section>
-
-  <script>
-
-// Detecta quando o título da seção "Misión" e o conteúdo estão visíveis e adiciona a classe 'visible'
-window.addEventListener('DOMContentLoaded', function () {
-  const sectionTitle = document.querySelector('.next-section');
-  const content = document.querySelector('.direita-content');
-  
-  // Adiciona a classe 'visible' para ativar a transição de entrada
-  sectionTitle.classList.add('visible');
-  content.classList.add('visible');
-});
-
-  window.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('.section-title')?.classList.add('visible');
-    document.querySelector('.content')?.classList.add('visible');
-  });
-
-  window.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('.vision .section-title')?.classList.add('visible');
-    document.querySelector('.vision .content')?.classList.add('visible');
-  });
-
-
-
-  </script>
-
-</body>
+    <script src="js/nosotros.js"></script>
+  </body>
 </html>
