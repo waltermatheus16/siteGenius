@@ -166,6 +166,12 @@ nav a {
   right: 1.5rem;
   width: 35px;
   height: 35px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icono-trabajo:hover {
+  transform: scale(1.3); /* Aumenta mais a imagem ao passar o mouse */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5); /* Sombra mais forte para destacar */
 }
 
 .tags {
@@ -179,21 +185,36 @@ nav a {
   color: #666;
   font-weight: 600;
   font-size: 0.9rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+
+}
+
+.tags span:hover {
+  color: #ff9800; /* Cor laranja ao passar o mouse */
+  transform: translateY(-5px); /* Eleva o texto levemente */
 }
 
 .btn-ver {
   position: absolute;
   bottom: 1.5rem;
   right: 1.5rem;
-  background: white;
-  color: black;
+  background: white; /* Botão branco */
+  color: #333; /* Texto em cinza escuro */
   font-weight: bold;
-  border: none;
-  border-radius: 15px;
-  padding: 0.6rem 1.5rem; /* Aumentado */
-  font-size: 1rem; /* Adicionado para aumentar o texto */
+  border: 2px solid #333; /* Borda cinza escuro */
+  border-radius: 25px; /* Borda arredondada */
+  padding: 0.8rem 2rem; /* Aumentado para um visual mais confortável */
+  font-size: 1rem;
   cursor: pointer;
+  transition: all 0.3s ease; /* Suaviza todas as transições */
 }
+
+.btn-ver:hover {
+  transform: translateY(-4px) scale(1.05); /* Movimento para cima e aumento sutil */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+
 
 
 .servicios-section {
@@ -223,6 +244,8 @@ nav a {
 
     .slide {
       display: none;
+      
+      
     }
 
     .slide.active {
@@ -392,7 +415,7 @@ nav a {
     <div class="trabajos-title">Trabajos</div>
 
     <div class="trabajo-box">
-        <img src="java-icon.png" alt="Java" class="icono-trabajo" />
+        <img src="java-coffee-cup-logo.png" alt="Java" class="icono-trabajo" />
         <h2>Total Electro Ecommerce</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
         <div class="tags">
@@ -409,7 +432,7 @@ nav a {
 <br>
 <br>
       <div class="trabajo-box">
-          <img src="java-icon.png" alt="Java" class="icono-trabajo" />
+          <img src="java-coffee-cup-logo.png" alt="Java" class="icono-trabajo" />
           <h2>Total Electro Ecommerce</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
           <div class="tags">
@@ -520,6 +543,32 @@ nav a {
   }
 });
 
+
+document.addEventListener('DOMContentLoaded', function () {
+  let currentIndex = 0; // Inicia na primeira slide
+  const slides = document.querySelectorAll('.slide'); // Seleciona todas as slides
+  const dots = document.querySelectorAll('.dot'); // Seleciona todos os pontos (dots)
+  const totalSlides = slides.length;
+
+  function showSlide(index) {
+    // Remove a classe 'active' de todas as slides e dots
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    // Adiciona a classe 'active' à slide e ao ponto atual
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+  }
+
+  // Função para avançar automaticamente a cada 5 segundos
+  setInterval(function() {
+    currentIndex = (currentIndex + 1) % totalSlides; // Avança para a próxima slide, e volta à primeira quando chega na última
+    showSlide(currentIndex);
+  }, 5000); // 5000ms = 5 segundos
+
+  // Inicializa com a primeira slide visível e ponto ativo
+  showSlide(currentIndex);
+});
 
   </script>
   
