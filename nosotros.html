@@ -332,6 +332,89 @@
         background: white;
         border-radius: 50%;
       }
+
+      .right-section-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 8rem;
+  margin-bottom: 1rem;
+  text-align: right;
+  display: block;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 1s ease, opacity 1s ease;
+  position: relative;
+  margin-right: 8rem; /* <-- Espaço da direita */
+
+}
+
+.right-section-title.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.right-section-title::after {
+  content: "";
+  position: absolute;
+  right: -127px; /* Ajuste a posição da linha */
+  bottom: -10px; /* Ajuste a altura da linha em relação ao título */
+  height: 3px;
+  width: 57%;
+  background-color: white;
+}
+
+.right-section-title::before {
+  content: "";
+  position: absolute;
+  left: 800px;
+  bottom: -15px;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+
+}
+
+.right-content {
+  max-width: 700px;
+  margin: 2rem 0 6rem auto; /* empurra o conteúdo para a direita */
+  line-height: 1.6;
+  font-size: 1rem;
+  font-family: "Source Code Pro", monospace;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 1s ease, opacity 1s ease;
+  text-align: right;
+}
+
+.right-content.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.innovacion-constante .right-section-title::after {
+  content: "";
+  position: absolute;
+  right: -50px; /* Ajuste a posição da linha */
+  bottom: -10px; /* Ajuste a altura da linha em relação ao título */
+  height: 3px;
+  width: 233%;  /* Ajuste o comprimento da linha */
+  background-color: white;
+}
+
+.innovacion-constante .right-section-title::before {
+  content: "";
+  position: absolute;
+  left: 213%; /* Ajuste a posição da bolinha para a esquerda */
+  bottom: -15px; /* Ajuste a posição da bolinha verticalmente */
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+}
+
+
     </style>
   </head>
   <body>
@@ -420,8 +503,55 @@
             respeto por cada proyecto que confiado en nosotros.
           </p>
         </div>
+        <section class="nuestro-compromiso">
+            <h2 class="right-section-title">Nuestro Compromiso</h2>
+            <div class="right-content">
+              <p>Texto explicativo sobre o compromisso da empresa...</p>
+            </div>
+          </section>
+          
+          <div class="innovacion-constante">
+            <h2 class="section-title right-section-title">Innovación Constante</h2>
+            <p class="content">
+              Valoramos la creatividad y el aprendizaje continuo, lo que nos permite mantenernos a la vanguardia en un mundo en constante evolución.
+            </p>
+          </div>
+          
+          <section class="futuro-sostenible">
+            <h2 class="right-section-title">Futuro Sostenible</h2>
+            <div class="right-content">
+              <p>Texto explicativo sobre um futuro sustentável...</p>
+            </div>
+          </section>
+          
+
+
       </section>
     </section>
-    <script src="js/nosotros.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+          // Seções existentes
+          document.querySelector('.next-section')?.classList.add('visible');
+          document.querySelector('.direita-content')?.classList.add('visible');
+          document.querySelector('.section-title')?.classList.add('visible');
+          document.querySelector('.content')?.classList.add('visible');
+          document.querySelector('.vision .section-title')?.classList.add('visible');
+          document.querySelector('.vision .content')?.classList.add('visible');
+      
+          // Novas seções com conteúdo à direita
+          document.querySelector('.nuestro-compromiso .right-section-title')?.classList.add('visible');
+          document.querySelector('.nuestro-compromiso .right-content')?.classList.add('visible');
+      
+          // Seção "Innovación Constante" com conteúdo à esquerda
+          document.querySelector('.innovacion-constante .section-title')?.classList.add('visible');
+          document.querySelector('.innovacion-constante .content')?.classList.add('visible');
+      
+          // Seção "Futuro Sostenible" com conteúdo à direita
+          document.querySelector('.futuro-sostenible .right-section-title')?.classList.add('visible');
+          document.querySelector('.futuro-sostenible .right-content')?.classList.add('visible');
+        });
+      </script>
+      
+      
   </body>
 </html>
